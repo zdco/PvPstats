@@ -33,7 +33,7 @@
   $expansion = 2;
 
   # Connection to the database of characters (address, username, password, database)
-  $db = new mysqli("localhost","root","password","characters");
+  $db = new mysqli("localhost","trinity","trinity","characters");
 
   # Charset (you can set it blank if you want to maintain your default charset)
   $charset = "utf8";

@@ -16,7 +16,7 @@
     <meta name="description" content="PvPstats, see who is winning!">
     <meta name="author" content="ShinDarth">
 
-    <title><?= $server_name ?> PvPstats</title>
+    <title><?= $server_name ?> PvP统计</title>
 
     <link href="css/bootstrap-cyborg.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -40,7 +40,7 @@
     <div class="container">
 
       <div class="main-title">
-        <p class="text-center h3"><?= $server_name ?> PvP statistics</p>
+        <p class="text-center h3"><?= $server_name ?> PvP 统计</p>
         <div id="logo">
           <img id="logo_img" class="img-responsive" alt="PvPstats logo" src="<?= $server_logo ?>">
         </div>
@@ -48,32 +48,32 @@
 
       <div class="row text-center">
         <div id="stats_info">
-          The statistics count the amount of victories in &nbsp;
+          选择要查看的战场胜利统计 &nbsp;
           <form method="GET">
             <?php if (isset($_GET['level'])) { ?>
             <input type="hidden" name="level" value="<?= $_GET['level'] ?>">
             <?php } ?>
             <select name="type" onChange='this.form.submit()'>
-              <option value="0">All</option>
-              <option value="<?= $BATTLEGROUND_AV ?>" <?= $BATTLEGROUND_AV_sel ?>>Alterac Valley</option>
-              <option value="<?= $BATTLEGROUND_WS ?>" <?= $BATTLEGROUND_WS_sel ?>>Warsong Gulch</option>
-              <option value="<?= $BATTLEGROUND_AB ?>" <?= $BATTLEGROUND_AB_sel ?>>Arathi Basin</option>
+              <option value="0">所有</option>
+              <option value="<?= $BATTLEGROUND_AV ?>" <?= $BATTLEGROUND_AV_sel ?>>奥特兰克山谷</option>
+              <option value="<?= $BATTLEGROUND_WS ?>" <?= $BATTLEGROUND_WS_sel ?>>战歌峡谷</option>
+              <option value="<?= $BATTLEGROUND_AB ?>" <?= $BATTLEGROUND_AB_sel ?>>阿拉希盆地</option>
               <?php if ($expansion > 0) { ?>
-              <option value="<?= $BATTLEGROUND_EY ?>" <?= $BATTLEGROUND_EY_sel ?>>Eye of the Storm</option>
+              <option value="<?= $BATTLEGROUND_EY ?>" <?= $BATTLEGROUND_EY_sel ?>>风暴之眼</option>
               <?php if ($expansion > 1) { ?>
-              <option value="<?= $BATTLEGROUND_SA ?>" <?= $BATTLEGROUND_SA_sel ?>>Strand of the Ancients</option>
-              <option value="<?= $BATTLEGROUND_IC ?>" <?= $BATTLEGROUND_IC_sel ?>>Isle of Conquest</option>
+              <option value="<?= $BATTLEGROUND_SA ?>" <?= $BATTLEGROUND_SA_sel ?>>远古海滩</option>
+              <option value="<?= $BATTLEGROUND_IC ?>" <?= $BATTLEGROUND_IC_sel ?>>征服之岛</option>
               <?php if ($expansion > 2) { ?>
-              <option value="<?= $BATTLEGROUND_TP ?>" <?= $BATTLEGROUND_TP_sel ?>>Twin Peaks</option>
-              <option value="<?= $BATTLEGROUND_BFG ?>" <?= $BATTLEGROUND_BFG_sel ?>>Battle For Gilneas</option>
+              <option value="<?= $BATTLEGROUND_TP ?>" <?= $BATTLEGROUND_TP_sel ?>>双峰</option>
+              <option value="<?= $BATTLEGROUND_BFG ?>" <?= $BATTLEGROUND_BFG_sel ?>>吉尔尼斯城</option>
               <?php } } } ?>
             </select>
             <noscript><input type="submit" value="Submit"></noscript>
           </form>
-         &nbsp; Battlegrounds starting from <span style="color: orange;"><strong><?= $online_from ?></strong></span>
+         &nbsp; 战场开始于 <span style="color: orange;"><strong><?= $online_from ?></strong></span>
         </div>
         <div class="col-lg-3 col-sm-6" style="padding: 0 10px;">
-          <p class="h3">Today</p>
+          <p class="h3">今日</p>
           <div class="score-faction-container">
             <img src="img/alliance_min.png" height="100%"> <span style="color: white; font-size: 20px;"><strong>&nbsp;&nbsp;<?= $alliance_today ?>&nbsp;&nbsp;  -&nbsp;&nbsp;<?= $horde_today ?>&nbsp;&nbsp;</strong></span> <img src="img/horde_min.png" height="100%">
           </div>
@@ -82,9 +82,9 @@
               <thead>
                 <tr>
                   <th class="text-center">#</th>
-                  <th class="text-center">Character</th>
+                  <th class="text-center">角色</th>
                   <th class="text-center">&#9679;</th>
-                  <th class="text-center">Victories</th>
+                  <th class="text-center">胜利</th>
                 </tr>
               </thead>
               <tbody>
@@ -95,7 +95,7 @@
           <button id="toggle-today" type="button" class="btn btn-default btn-xs">More</button>
         </div>
         <div class="col-lg-3 col-sm-6" style="padding: 0 10px;">
-          <p class="h3">Last 7 days</p>
+          <p class="h3">近7天</p>
           <div class="score-faction-container">
             <img src="img/alliance_min.png" height="100%"> <span style="color: white; font-size: 20px;"><strong>&nbsp;&nbsp;<?= $alliance_last7 ?>&nbsp;&nbsp;  -&nbsp;&nbsp;<?= $horde_last7 ?>&nbsp;&nbsp;</strong></span> <img src="img/horde_min.png" height="100%">
           </div>
@@ -104,9 +104,9 @@
               <thead>
                 <tr>
                   <th class="text-center">#</th>
-                  <th class="text-center">Character</th>
+                  <th class="text-center">角色</th>
                   <th class="text-center">&#9679;</th>
-                  <th class="text-center">Victories</th>
+                  <th class="text-center">胜利</th>
                 </tr>
               </thead>
               <tbody>
@@ -117,7 +117,7 @@
           <button id="toggle-last7" type="button" class="btn btn-default btn-xs">More</button>
         </div>
         <div class="col-lg-3 col-sm-6" style="padding: 0 10px;">
-          <p class="h3">This month</p>
+          <p class="h3">本月</p>
           <div class="score-faction-container">
             <img src="img/alliance_min.png" height="100%"> <span style="color: white; font-size: 20px;"><strong>&nbsp;&nbsp;<?= $alliance_month ?>&nbsp;&nbsp;  -&nbsp;&nbsp;<?= $horde_month ?>&nbsp;&nbsp;</strong></span> <img src="img/horde_min.png" height="100%">
           </div>
@@ -126,9 +126,9 @@
               <thead>
                 <tr>
                   <th class="text-center">#</th>
-                  <th class="text-center">Character</th>
+                  <th class="text-center">角色</th>
                   <th class="text-center">&#9679;</th>
-                  <th class="text-center">Victories</th>
+                  <th class="text-center">胜利</th>
                 </tr>
               </thead>
               <tbody>
@@ -139,7 +139,7 @@
           <button id="toggle-month" type="button" class="btn btn-default btn-xs">More</button>
         </div>
         <div class="col-lg-3 col-sm-6" style="padding: 0 10px;">
-          <p class="h3">Overall</p>
+          <p class="h3">所有</p>
           <div class="score-faction-container">
             <img src="img/alliance_min.png" height="100%"> <span style="color: white; font-size: 20px;"><strong>&nbsp;&nbsp;<?= $alliance_overall ?>&nbsp;&nbsp;  -&nbsp;&nbsp;<?= $horde_overall ?>&nbsp;&nbsp;</strong></span> <img src="img/horde_min.png" height="100%">
           </div>
@@ -148,9 +148,9 @@
               <thead>
                 <tr>
                   <th class="text-center">#</th>
-                  <th class="text-center">Character</th>
+                  <th class="text-center">角色</th>
                   <th class="text-center">&#9679;</th>
-                  <th class="text-center">Victories</th>
+                  <th class="text-center">胜利</th>
                 </tr>
               </thead>
               <tbody>
@@ -166,14 +166,14 @@
 
       <div class="row text-center">
         <div class="col-lg-3 col-sm-6" style="padding: 0 10px;">
-          <p class="h4" style="margin-top: 32px">Guilds Today</p>
+          <p class="h4" style="margin-top: 32px">公会 今日</p>
           <div class="today-score-container score-container">
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th class="text-center">#</th>
-                  <th class="text-center">Guild</th>
-                  <th class="text-center">Victories</th>
+                  <th class="text-center">公会</th>
+                  <th class="text-center">胜利</th>
                 </tr>
               </thead>
               <tbody>
@@ -183,14 +183,14 @@
           </div>
         </div>
         <div class="col-lg-3 col-sm-6" style="padding: 0 10px;">
-          <p class="h4" style="margin-top: 32px">Guilds Last 7 days</p>
+          <p class="h4" style="margin-top: 32px">公会 近7天</p>
           <div class="last7-score-container score-container">
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th class="text-center">#</th>
-                  <th class="text-center">Guild</th>
-                  <th class="text-center">Victories</th>
+                  <th class="text-center">公会</th>
+                  <th class="text-center">胜利</th>
                 </tr>
               </thead>
               <tbody>
@@ -200,14 +200,14 @@
           </div>
         </div>
         <div class="col-lg-3 col-sm-6" style="padding: 0 10px;">
-          <p class="h4" style="margin-top: 32px">Guilds This month</p>
+          <p class="h4" style="margin-top: 32px">公会 本月</p>
           <div class="month-score-container score-container">
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th class="text-center">#</th>
-                  <th class="text-center">Guild</th>
-                  <th class="text-center">Victories</th>
+                  <th class="text-center">公会</th>
+                  <th class="text-center">胜利</th>
                 </tr>
               </thead>
               <tbody>
@@ -217,14 +217,14 @@
           </div>
         </div>
         <div class="col-lg-3 col-sm-6" style="padding: 0 10px;">
-          <p class="h4" style="margin-top: 32px">Guilds Overall</p>
+          <p class="h4" style="margin-top: 32px">公会 所有</p>
           <div class="overall-score-container score-container">
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th class="text-center">#</th>
-                  <th class="text-center">Guild</th>
-                  <th class="text-center">Victories</th>
+                  <th class="text-center">公会</th>
+                  <th class="text-center">胜利</th>
                 </tr>
               </thead>
               <tbody>
