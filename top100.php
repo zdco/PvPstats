@@ -16,7 +16,7 @@
     <meta name="description" content="PvPstats, see who is winning!">
     <meta name="author" content="ShinDarth">
 
-    <title><?= $server_name ?> PvPstats</title>
+    <title><?= $server_name ?> PvP统计</title>
 
     <link href="css/bootstrap-cyborg.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -39,7 +39,7 @@
     <div class="container">
 
       <div class="main-title">
-        <p class="text-center h3"><?= $server_name ?> PvP statistics</p>
+        <p class="text-center h3"><?= $server_name ?> PvP 统计</p>
         <div id="logo">
           <img id="logo_img" class="img-responsive" alt="PvPstats logo" src="<?= $server_logo ?>">
         </div>
@@ -47,21 +47,21 @@
 
       <div class="row text-center">
         <div id="stats_info">
-          <span>Top 100 players and guilds with the biggest amount of victories in BattleGrounds starting from <span style="color: orange;"><strong><?= $online_from ?></strong></span>.</span><br>
-          <span style="color: #888">The victories of guilds are the amount of victories of each current guild member.</span>
+          <span>在战场中取得胜利次数最大的前100名玩家和公会，开始于 <span style="color: orange;"><strong><?= $online_from ?></strong></span>。</span><br>
+          <span style="color: #888">公会胜利次数是指每个公会成员胜利次数之和。</span>
         </div>
         <div class="col-sm-8" style="padding: 0 10px;">
-          <p class="h3">Top100 Players</p>
+          <p class="h3">前100名玩家</p>
           <div class="top100 table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th class="text-center">#</th>
-                  <th class="text-center">Character</th>
+                  <th class="text-center">角色</th>
                   <th class="text-center">&#9679;</th>
-                  <th class="text-center">Level</th>
-                  <th class="text-center">Guild</th>
-                  <th class="text-center">Victories</th>
+                  <th class="text-center">等级</th>
+                  <th class="text-center">公会</th>
+                  <th class="text-center">胜利</th>
                 </tr>
               </thead>
               <tbody>
@@ -72,14 +72,14 @@
         </div>
 
         <div class="col-sm-4" style="padding: 0 10px;">
-          <p class="h3">Top100 Guilds</p>
+          <p class="h3">前100名公会</p>
           <div class="top100 table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th class="text-center">#</th>
-                  <th class="text-center">Guild</th>
-                  <th class="text-center">Victories</th>
+                  <th class="text-center">公会</th>
+                  <th class="text-center">胜利</th>
                 </tr>
               </thead>
               <tbody>

@@ -761,21 +761,21 @@ function getBattleGroundTypeName($type)
   switch($type)
   {
     case $BATTLEGROUND_AV:
-      return "Alterac Valley";
+      return "奥特兰克山谷";
     case $BATTLEGROUND_WS:
-      return "Warsong Gulch";
+      return "战歌峡谷";
     case $BATTLEGROUND_AB:
-      return "Arathi Basin";
+      return "阿拉希盆地";
     case $BATTLEGROUND_EY:
-      return "Eye of the Storm";
+      return "风暴之眼";
     case $BATTLEGROUND_SA:
-      return "Strand of the Ancients";
+      return "远古海滩";
     case $BATTLEGROUND_IC:
-      return "Isle of Conquest";
+      return "征服之岛";
     case $BATTLEGROUND_TP:
-      return "Twin Peaks";
+      return "双峰";
     case $BATTLEGROUND_BFG:
-      return "Battle For Gilneas";
+      return "吉尔尼斯城";
   }
 }
 

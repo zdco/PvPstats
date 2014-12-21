@@ -55,10 +55,10 @@
       switch($winner_faction)
       {
         case $ALLIANCE:
-          $winner_text = "<span style=\"color: " . $alliance_color . "\">Alliance Wins</span>";
+          $winner_text = "<span style=\"color: " . $alliance_color . "\">联盟胜利</span>";
           break;
         case $HORDE:
-          $winner_text = "<span style=\"color: " . $horde_color . "\">Horde Wins</span>";
+          $winner_text = "<span style=\"color: " . $horde_color . "\">部落胜利</span>";
           break;
         case $NONE:
           $winner_text = "Draw";
@@ -83,7 +83,7 @@
     <meta name="description" content="PvPstats, see who is winning!">
     <meta name="author" content="ShinDarth">
 
-    <title><?= $server_name ?> PvPstats</title>
+    <title><?= $server_name ?> PvP统计</title>
 
     <link href="css/bootstrap-cyborg.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -174,7 +174,7 @@
         }
 
       ?>
-      <p class="h4 text-center">Search for detailed scores:</p>
+      <p class="h4 text-center">搜索详细分数：</p>
       <form class="form-inline text-center" role="form" method="GET">
         <input name="search" type="hidden" value="1">
         <div class="form-group">
@@ -182,19 +182,19 @@
         </div>
         <div class="form-group">
           <select id="select-month" name="month" class="text-center">
-            <option id="month0" value="0">All months</option>
-            <option id="month1" value="1">January </option>
-            <option id="month2" value="2">February</option>
-            <option id="month3" value="3">March</option>
-            <option id="month4" value="4">April</option>
-            <option id="month5" value="5">May </option>
-            <option id="month6" value="6">June </option>
-            <option id="month7" value="7">July</option>
-            <option id="month8" value="8">August</option>
-            <option id="month9" value="9">September</option>
-            <option id="month10" value="10">October</option>
-            <option id="month11" value="11">November</option>
-            <option id="month12" value="12">December</option>
+            <option id="month0" value="0">所有月份</option>
+            <option id="month1" value="1">一月</option>
+            <option id="month2" value="2">二月</option>
+            <option id="month3" value="3">三月</option>
+            <option id="month4" value="4">四月</option>
+            <option id="month5" value="5">五月</option>
+            <option id="month6" value="6">六月</option>
+            <option id="month7" value="7">七月</option>
+            <option id="month8" value="8">八月</option>
+            <option id="month9" value="9">九月</option>
+            <option id="month10" value="10">十月</option>
+            <option id="month11" value="11">十一月</option>
+            <option id="month12" value="12">十二月</option>
           </select>
         </div>
         <div class="form-group">
@@ -203,25 +203,25 @@
         <span style="color: white" class="nohover hidden-xs hidden-sm">&#9679;</span>
         <div class="form-group">
           <select id="select-type" name="type" class="text-center">
-            <option value="0">All types</option>
-            <option value="<?= $BATTLEGROUND_AV ?>" <?= $BATTLEGROUND_AV_sel ?>>Alterac Valley</option>
-            <option value="<?= $BATTLEGROUND_WS ?>" <?= $BATTLEGROUND_WS_sel ?>>Warsong Gulch</option>
-            <option value="<?= $BATTLEGROUND_AB ?>" <?= $BATTLEGROUND_AB_sel ?>>Arathi Basin</option>
+            <option value="0">所有类型</option>
+            <option value="<?= $BATTLEGROUND_AV ?>" <?= $BATTLEGROUND_AV_sel ?>>奥特兰克山谷</option>
+            <option value="<?= $BATTLEGROUND_WS ?>" <?= $BATTLEGROUND_WS_sel ?>>战歌峡谷</option>
+            <option value="<?= $BATTLEGROUND_AB ?>" <?= $BATTLEGROUND_AB_sel ?>>阿拉希盆地</option>
             <?php if ($expansion > 0) { ?>
-            <option value="<?= $BATTLEGROUND_EY ?>" <?= $BATTLEGROUND_EY_sel ?>>Eye of the Storm</option>
+            <option value="<?= $BATTLEGROUND_EY ?>" <?= $BATTLEGROUND_EY_sel ?>>风暴之眼</option>
             <?php if ($expansion > 1) { ?>
-            <option value="<?= $BATTLEGROUND_SA ?>" <?= $BATTLEGROUND_SA_sel ?>>Strand of the Ancients</option>
-            <option value="<?= $BATTLEGROUND_IC ?>" <?= $BATTLEGROUND_IC_sel ?>>Isle of Conquest</option>
+            <option value="<?= $BATTLEGROUND_SA ?>" <?= $BATTLEGROUND_SA_sel ?>>远古海滩</option>
+            <option value="<?= $BATTLEGROUND_IC ?>" <?= $BATTLEGROUND_IC_sel ?>>征服之岛</option>
             <?php if ($expansion > 2) { ?>
-            <option value="<?= $BATTLEGROUND_TP ?>" <?= $BATTLEGROUND_TP_sel ?>>Twin Peaks</option>
-            <option value="<?= $BATTLEGROUND_BFG ?>" <?= $BATTLEGROUND_BFG_sel ?>>Battle For Gilneas</option>
+            <option value="<?= $BATTLEGROUND_TP ?>" <?= $BATTLEGROUND_TP_sel ?>>双峰</option>
+            <option value="<?= $BATTLEGROUND_BFG ?>" <?= $BATTLEGROUND_BFG_sel ?>>吉尔尼斯城</option>
             <?php } } } ?>
           </select>
         </div>
         <span style="color: white" class="nohover hidden-xs hidden-sm">&#9679;</span>
         <div class="form-group">
           <select id="select-level" name="level" class="text-center">
-            <option value="0">All levels</option>
+            <option value="0">所有等级</option>
             <?php
             if ($expansion < 3)
             {
@@ -274,23 +274,23 @@
         </div>
         <span style="color: white" class="nohover hidden-xs hidden-sm">&#9679;</span>
         <div class="form-group">
-          Display <input class="form-control text-center" style="width: 50px; height: 26px; padding: 2px;" name="limit" type="text" value="<?= $limit ?>" placeholder="20"> results
+          显示 <input class="form-control text-center" style="width: 50px; height: 26px; padding: 2px;" name="limit" type="text" value="<?= $limit ?>" placeholder="20"> 条结果
         </div>
-        <button id="search" type="submit" class="btn btn-default">Search</button>
+        <button id="search" type="submit" class="btn btn-default">搜索</button>
       </form>
 
       <br>
       <div style="padding: 0 10px;">
-          <p class="h4 text-center">Search results:</p>
+          <p class="h4 text-center">搜索结果：</p>
           <div style="border: 1px solid grey" class="table-responsive">
             <table class="table table-hover text-center" data-sortable>
               <thead>
                 <tr>
                   <th class="text-center th-elem hover-pointer" onClick="thfocus(this)">#</th>
-                  <th class="text-center th-elem hover-pointer" onClick="thfocus(this)">Type</th>
-                  <th class="text-center th-elem hover-pointer" onClick="thfocus(this)">Level Bracket</th>
-                  <th class="text-center th-elem hover-pointer" onClick="thfocus(this)">End Date</th>
-                  <th class="text-center th-elem hover-pointer" onClick="thfocus(this)">End Time</th>
+                  <th class="text-center th-elem hover-pointer" onClick="thfocus(this)">类型</th>
+                  <th class="text-center th-elem hover-pointer" onClick="thfocus(this)">等级</th>
+                  <th class="text-center th-elem hover-pointer" onClick="thfocus(this)">结束日期</th>
+                  <th class="text-center th-elem hover-pointer" onClick="thfocus(this)">结束时间</th>
                 </tr>
               </thead>
               <tbody>
@@ -323,61 +323,61 @@
         <table id="bg-table" class="table table-hover text-center" data-sortable>
           <thead>
             <tr>
-              <th id="character" class="th-elem text-center" onClick="thfocus(this)">Character</th>
+              <th id="character" class="th-elem text-center" onClick="thfocus(this)">角色</th>
               <th id="class" class="th-elem text-center" onClick="thfocus(this)">&#9679;</th>
 
-              <th id="killing-blows" class="th-elem text-center" onClick="thfocus(this)">Killing Blows</th>
-              <th id="deaths" class="th-elem text-center" onClick="thfocus(this)">Deaths</th>
-              <th id="honorable-kills" class="th-elem text-center" onClick="thfocus(this)">Honorable Kills</th>
-              <th id="bonus-honor" class="th-elem text-center" onClick="thfocus(this)">Bonus Honor</th>
-              <th id="damage-done" class="th-elem text-center" onClick="thfocus(this)">Damage Done</th>
-              <th id="healing" class="th-elem text-center" onClick="thfocus(this)">Healing Done</th>
+              <th id="killing-blows" class="th-elem text-center" onClick="thfocus(this)">击杀</th>
+              <th id="deaths" class="th-elem text-center" onClick="thfocus(this)">死亡</th>
+              <th id="honorable-kills" class="th-elem text-center" onClick="thfocus(this)">荣誉击杀</th>
+              <th id="bonus-honor" class="th-elem text-center" onClick="thfocus(this)">奖励荣誉</th>
+              <th id="damage-done" class="th-elem text-center" onClick="thfocus(this)">杀伤力</th>
+              <th id="healing" class="th-elem text-center" onClick="thfocus(this)">治疗效果</th>
 
               <?php
 
               switch($type)
               {
                 case $BATTLEGROUND_AV:
-                  $attrs = '<th id="attr1" class="th-elem text-center" onClick="thfocus(this)">Graveyards Assaulted</th>'
-                         . '<th id="attr2" class="th-elem text-center" onClick="thfocus(this)">Graveyards Defended</th>'
-                         . '<th id="attr3" class="th-elem text-center" onClick="thfocus(this)">Towers Assaulted</th>'
-                         . '<th id="attr4" class="th-elem text-center" onClick="thfocus(this)">Towers Defended</th>'
-                         . '<th id="attr5" class="th-elem text-center" onClick="thfocus(this)">Mines Captured</th>';
+                  $attrs = '<th id="attr1" class="th-elem text-center" onClick="thfocus(this)">袭击的墓地</th>'
+                         . '<th id="attr2" class="th-elem text-center" onClick="thfocus(this)">防御的墓地</th>'
+                         . '<th id="attr3" class="th-elem text-center" onClick="thfocus(this)">袭击的哨塔</th>'
+                         . '<th id="attr4" class="th-elem text-center" onClick="thfocus(this)">防御的哨塔</th>'
+                         . '<th id="attr5" class="th-elem text-center" onClick="thfocus(this)">占领矿洞</th>';
                   $attr_count = 5;
                   break;
 
                 case $BATTLEGROUND_WS:
                 case $BATTLEGROUND_TP:
-                  $attrs = '<th id="attr1" class="th-elem text-center" onClick="thfocus(this)">Flags Captured</th>'
-                         . '<th id="attr2" class="th-elem text-center" onClick="thfocus(this)">Flags Returned</th>';
+                  $attrs = '<th id="attr1" class="th-elem text-center" onClick="thfocus(this)">夺旗</th>'
+                         . '<th id="attr2" class="th-elem text-center" onClick="thfocus(this)">丢旗</th>';
                   $attr_count = 2;
                   break;
 
                 case $BATTLEGROUND_AB:
                 case $BATTLEGROUND_IC:
                 case $BATTLEGROUND_BFG:
-                  $attrs = '<th id="attr1" class="th-elem text-center" onClick="thfocus(this)">Bases Assaulted</th>'
-                         . '<th id="attr2" class="th-elem text-center" onClick="thfocus(this)">Bases Defended</th>';
+                  $attrs = '<th id="attr1" class="th-elem text-center" onClick="thfocus(this)">袭击的基地</th>'
+                         . '<th id="attr2" class="th-elem text-center" onClick="thfocus(this)">防御的基地</th>';
                   $attr_count = 2;
                   break;
 
                 case $BATTLEGROUND_EY:
-                  $attrs = '<th id="attr1" class="th-elem text-center" onClick="thfocus(this)">Flags Captured</th>';
+                  $attrs = '<th id="attr1" class="th-elem text-center" onClick="thfocus(this)">夺旗</th>';
                   $attr_count = 1;
                   break;
 
                 case $BATTLEGROUND_SA:
-                  $attrs = '<th id="attr1" class="th-elem text-center" onClick="thfocus(this)">Demolishers Destroyed</th>'
-                         . '<th id="attr2" class="th-elem text-center" onClick="thfocus(this)">Gates Destroyed</th>';
+                  $attrs = '<th id="attr1" class="th-elem text-center" onClick="thfocus(this)">摧毁攻城载具</th>'
+                         . '<th id="attr2" class="th-elem text-center" onClick="thfocus(this)">摧毁大门</th>';
                   $attr_count = 2;
                   break;
 
                 default:
-                  $attrs = '<th id="attr1" class="th-elem text-center" onClick="thfocus(this)">Attr1</th>'
-                         . '<th id="attr2" class="th-elem text-center" onClick="thfocus(this)">Attr2</th>'
-                         . '<th id="attr3" class="th-elem text-center" onClick="thfocus(this)">Attr3</th>'
-                         . '<th id="attr4" class="th-elem text-center" onClick="thfocus(this)">Attr4</th>'
-                         . '<th id="attr5" class="th-elem text-center" onClick="thfocus(this)">Attr5</th>';
+                  $attrs = '<th id="attr1" class="th-elem text-center" onClick="thfocus(this)">属性1</th>'
+                         . '<th id="attr2" class="th-elem text-center" onClick="thfocus(this)">属性2</th>'
+                         . '<th id="attr3" class="th-elem text-center" onClick="thfocus(this)">属性3</th>'
+                         . '<th id="attr4" class="th-elem text-center" onClick="thfocus(this)">属性4</th>'
+                         . '<th id="attr5" class="th-elem text-center" onClick="thfocus(this)">属性5</th>';
                   $attr_count = 5;
               }
 
@@ -511,17 +511,17 @@
 
       <div class="row text-center">
         <div class="col-lg-3 col-sm-6" style="padding: 0 10px;">
-          <p class="h4">Guild Members</p>
+          <p class="h4">公会成员</p>
           <div class="score-faction-container">
-            Amount of members joined this BG
+            加入该战场的成员数量
           </div>
           <div class="guild-members-container score-container" style="border: 1px solid grey">
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th class="text-center">#</th>
-                  <th class="text-center">Guild</th>
-                  <th class="text-center">Members</th>
+                  <th class="text-center">公会</th>
+                  <th class="text-center">成员</th>
                 </tr>
               </thead>
               <tbody>
@@ -541,9 +541,9 @@
               <thead>
                 <tr>
                   <th class="text-center">#</th>
-                  <th class="text-center">Character</th>
+                  <th class="text-center">角色</th>
                   <th class="text-center">&#9679;</th>
-                  <th class="text-center">Victories</th>
+                  <th class="text-center">胜利</th>
                 </tr>
               </thead>
               <tbody>
@@ -563,9 +563,9 @@
               <thead>
                 <tr>
                   <th class="text-center">#</th>
-                  <th class="text-center">Character</th>
+                  <th class="text-center">角色</th>
                   <th class="text-center">&#9679;</th>
-                  <th class="text-center">Victories</th>
+                  <th class="text-center">胜利</th>
                 </tr>
               </thead>
               <tbody>
@@ -576,18 +576,18 @@
           <button id="toggle-this-month" type="button" class="btn btn-default btn-xs">More</button>
         </div>
         <div class="col-lg-3 col-sm-6" style="padding: 0 10px;">
-          <p class="h4">BattleGrounds of the day</p>
+          <p class="h4">当日战场</p>
           <div class="score-faction-container">
-            All BattleGrounds played <?= $date ?>
+            所有在 <?= $date ?> 比赛的战场
           </div>
           <div class="bg-day-container score-container" style="border: 1px solid grey">
             <table class="table table-hover">
               <thead>
                 <tr>
                   <th class="text-center">#</th>
-                  <th class="text-center">Type</th>
+                  <th class="text-center">类型</th>
                   <th class="text-center">&#9679;</th>
-                  <th class="text-center">End time</th>
+                  <th class="text-center">结束时间</th>
                 </tr>
               </thead>
               <tbody>

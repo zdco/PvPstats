@@ -11,7 +11,7 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-center">
-            <li class="link-all"><a href="index.php<?= $type_link_all ?>">All Levels</a></li>
+            <li class="link-all"><a href="index.php<?= $type_link_all ?>">所有等级</a></li>
             <li><a class="nohover visible-lg">&#9679;</a></li>
             <?php
 
@@ -129,7 +129,7 @@
             }
             ?>
             <li><a class="nohover visible-lg">&#9679;</a></li>
-            <li id="detailed-scores"><a href="battleground.php">Detailed Scores</a></li>
+            <li id="detailed-scores"><a href="battleground.php">详细分数</a></li>
             <li><a class="nohover visible-lg">&#9679;</a></li>
             <li id="top100"><a href="top100.php">Top100</a></li>
           </ul>
