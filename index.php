@@ -127,8 +127,8 @@
                 <tr>
                   <th class="text-center">#</th>
                   <th class="text-center">角色</th>
-                  <th class="text-center">&#胜利;</th>
-                  <th class="text-center">Victories</th>
+                  <th class="text-center">&#9679;</th>
+                  <th class="text-center">胜利</th>
                 </tr>
               </thead>
               <tbody>
